@@ -1,0 +1,53 @@
+//POSITION
+
+// @mixin position($pos:relative, $top: auto, $left: auto) {
+//    position: $pos;
+
+//    @if $top == auto {
+//       top: $top;  
+//    } @else {
+//       top: $top+px;
+//    }
+
+//    @if $left == auto {
+//       left: $left;  
+//    } @else {
+//       left: $left+px;
+//    }
+// }
+
+//MEDIA
+
+@mixin respond-to($size)  {
+
+   @if $size == mobile {
+      @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+            @content
+      }
+   } 
+
+   @if $size == tablet {
+      @media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+            @content
+      }
+   }  
+
+   @if $size == desktop {
+      @media screen and (min-width: $desktop-min) and (max-width: $desktop-max) {
+            @content
+      }
+   }  
+
+   @if $size == from_tablet {
+      @media screen and (min-width: $tablet-min) {
+            @content
+      }
+   }  
+
+   @if $size == to_desktop {
+      @media screen and (min-width: $desktop-min) {
+            @content
+      }
+   }
+      
+}
